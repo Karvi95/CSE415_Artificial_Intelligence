@@ -47,7 +47,7 @@ def respondHelper(the_input, wordlist):
           global emptyResCount
           emptyResCount += 1
           return puntCustom(emptyResCount, EMPTYRES)
-      if ('iPhone' in wordlist) or ('maps' in wordlist):
+      if ('iPhone' in wordlist):
           return puntRandom(IPHONE)
       if ('stock' in wordlist):
           return "Algorithmic tradin's ripper, mate! Stocks feature heavily in 'em. But back ta learnin'."
@@ -57,12 +57,24 @@ def respondHelper(the_input, wordlist):
           return "Ya're fully sick if ya can bang out an advanced version o'these algorithms!"
       if ('design' in wordlist):
           return "My design is true blue, mate! Fair Dinkum. I'll teach ya all the structures ya need to pass your interviews."
+      if ('map' in wordlist) or ('maps' in wordlist):
+          return puntRandom(MAPS)
+      if ('tree' in wordlist) or ('trees' in wordlist):
+          return "Storin' hierarchies, mate? Piece a piss, trees'll come in handy."
+      if (('hash' in wordlist) or ('hashes' in wordlist) and ('table' in wordlist)):
+          return "Now deese are bewdy: O(1) lookups!"
+      if 'quicksort' in wordlist:
+          return "Divide-and-conquer and she'll be apples mate."
+      if 'greedy' in wordlist:
+          global greedyCount
+          greedyCount += 1
+          return puntCustom(greedyCount, GREEDY)
       if ('big' in wordlist) and ('o' in wordlist):
-          return "time and space ."
+          return "Strewth, ya gotta know about how long a method takes ta run and how much space it takes up!."
       if ('binary' in wordlist) and ('search' in wordlist):
-          return "binary"    
+          return "Ya'll be a little ripper if ya can eliminate half the input each time each go."    
       if ('set' in wordlist) or ('sets' in wordlist):
-          return "set"
+          return "This Sheila's the platybus' bill! Ya won't find any duplicates usin' these."
       if wordlist[0:3] == ['i', "don't", 'understand']:
           return "It's real simple, mate. Let me start from the top.'"
       return punt()
@@ -88,11 +100,12 @@ def dpred(w):
 #    'Returns True if w is an auxiliary verb.'
     return (w in ['do','can','should','would'])
 
-punt_count = 0
+punt_count = 1
 emptyResCount = 1
+greedyCount = 1
 
 PUNTS = ['Ace!',
-         'Crikey means gee whizz, wow!',
+         'Crikey? Crikey means gee whizz, wow!',
          "Yeah, ain't that runtime a beaut?!",
          "Bogosort's a bloody mess, I'll tell ya 'hwat.",
          'Gimme a fair go?.',
@@ -100,12 +113,21 @@ PUNTS = ['Ace!',
          "Remember: if ya don't optimize your algorithms, you're in for a dog's breakfast."]
          
 EMPTYRES = ["Mate, I dunno what ta do if ya don't speak up!",
-            'Ugh',
-            'WHAT']
+            "Ya havin' a chunder?",
+            'Rock off then, you pong.'
+            'Gonna do a Harold!']
 
-IPHONE = ["Mate, I dunno what ta do if ya don't speak up!",
-            'Ugh',
-            'WHAT']
+IPHONE = ["I'm a simple bloke, I dunno about no iPhone.",
+          'Av a go then, ya mug!',
+          "Holey Doley, I'm gobsmacked. But let's get back ta trees, ya hear?"]
+
+MAPS = ["Here's some good oil: if ya need two things saddled up together like a joey an her mama, use a map!",
+            "Some seppos call maps 'dictionaries'.",
+            'All the tall poppies can use maps to cache things.',
+            'If ya really wanna up yourself, graduate from maps to AVL trees.']
+
+GREEDY = ["Ya should be stoked to use greedy algorithms, whenever ya've ta make heaps'a optimis.",
+            "Ya're quite the show pony, ain't cha?"]
 
 def puntRandom(theList):
 #    'Returns one from a list of default responses.'
