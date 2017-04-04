@@ -48,7 +48,9 @@ def respondHelper(the_input, wordlist):
           emptyResCount += 1
           return puntCustom(emptyResCount, EMPTYRES)
       if ('iPhone' in wordlist):
-          return puntRandom(IPHONE)
+          global iPhoneCount
+          iPhoneCount += 1
+          return puntCustom(iPhoneCount, IPHONE)
       if ('stock' in wordlist):
           return "Algorithmic tradin's ripper, mate! Stocks feature heavily in 'em. But back ta learnin'."
       if ('code' in wordlist):
@@ -68,7 +70,7 @@ def respondHelper(the_input, wordlist):
       if 'greedy' in wordlist:
           global greedyCount
           greedyCount += 1
-          return puntCustom(greedyCount, GREEDY)
+          return puntRandom(GREEDY)
       if ('big' in wordlist) and ('o' in wordlist):
           return "Strewth, ya gotta know about how long a method takes ta run and how much space it takes up!."
       if ('binary' in wordlist) and ('search' in wordlist):
@@ -102,7 +104,7 @@ def dpred(w):
 
 punt_count = 1
 emptyResCount = 1
-greedyCount = 1
+iPhoneCount = 1
 
 PUNTS = ['Ace!',
          'Crikey? Crikey means gee whizz, wow!',

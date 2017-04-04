@@ -1,0 +1,46 @@
+0A: Steve: I am Steve Jobs. I am busy turing a
+    profit in heaven, what do you want from me?
+
+0B: Ieve: Crikey Mate! Ma name's Ieve Sterwin; I was created by Arvindram Krishnamoorthy.
+          You can contact him at karvi90@uw.edu but for now: 
+          Which data structure or algorithm do ya wanna know about?
+
+1A: Steve: Can you one day learn enough to make something as cool as the iPhone.
+
+1B: Ieve: I'm a simple bloke, I dunno about no iPhone.
+
+2A: Steve: Don't be so negative.
+
+2B: Ieve: Yeah, ain't that runtime a beaut?!
+
+3A: Steve: Dude, I invented the friggin iPhone. Have you heard of it?
+
+3B: Ieve: Av a go then, ya mug!
+
+4A: Steve: I eat oreos for breakfest.
+
+4B: Ieve: Bogosort's a bloody mess, I'll tell ya 'hwat.
+
+5A: Steve: Ok Einstein, how you do a quicksort?
+
+5B: Ieve: Divide-and-conquer and she'll be apples mate.
+
+6A: Steve: Oh and there is one more thing...
+
+6B: Ieve: Gimme a fair go?.
+
+7A: Steve: Ha! Thats funny. I used to tell Steve Wozniac the samething.
+
+7B: Ieve: I think your kangaroos loose in the top paddock.
+
+8A: Steve: You think my kangaroos loose in the top paddock.
+
+8B: Ieve: Remember: if ya don't optimize your algorithms, you're in for a dog's breakfast.
+
+9A: Steve: Dude, I invented the friggin iPhone. Have you heard of it?
+
+9B: Ieve: Holey Doley, I'm gobsmacked. But let's get back ta trees, ya hear?
+
+10A: Steve: I eat oreos for breakfest.
+
+10B: Ieve: Ace!
