@@ -66,7 +66,7 @@ def respondHelper(the_input, wordlist):
       if (('hash' in wordlist) or ('hashes' in wordlist) and ('table' in wordlist)):
           return "Now deese are bewdy: O(1) lookups!"
       if 'quicksort' in wordlist:
-          return "Divide-and-conquer and she'll be apples mate."
+          return "Divide-and-conquer and she'll be apples mate. Those're the guidelines ta code 'er."
       if 'greedy' in wordlist:
           global greedyCount
           greedyCount += 1
