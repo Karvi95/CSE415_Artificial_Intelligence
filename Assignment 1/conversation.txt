@@ -30,15 +30,15 @@ is-m440m27-01x:Desktop iguest$ python dialog.py
 
 6A: Steve: Oh and there is one more thing...
 
-6B: Ieve: Gimme a fair go?.
+6B: Ieve: Gimme a fair go?. 
 
 7A: Steve: Siri fetch me a glass of water
 
-7B: Ieve: Before that mate, earlier, ya asked about quicksort, and ole Ieve's explanation might have been a bit bodgy. Ya reckon ya've grasped it?
+7B: Ieve: Before that mate, earlier, ya asked about quicksort, and ole Ieve's explanation might have been a bit bodgy. Ya reckon ya've grasped it? ######### MEMORY FEATURE
 
 8A: Steve: Cool stuff, but can you tell me about map again?
 
-8B: Ieve: If ya really wanna up yourself, graduate from maps to AVL trees.
+8B: Ieve: If ya really wanna up yourself, graduate from maps to AVL trees.    ######### RANDOM-CHOICE FEATURE
 
 9A: Steve: I heard my book came out, is it any good?
 
@@ -46,4 +46,4 @@ is-m440m27-01x:Desktop iguest$ python dialog.py
 
 10A: Steve: You think my kangaroos loose in the top paddock.
 
-10B: Ieve: Remember: if ya don't optimize your algorithms, you're in for a dog's breakfast.
+10B: Ieve: Remember: if ya don't optimize your algorithms, you're in for a dog's breakfast. ######### CYCLE FEATURE
