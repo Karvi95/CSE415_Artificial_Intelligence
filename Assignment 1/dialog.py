@@ -10,7 +10,7 @@ N_TURNS = 10
 turn = 0
 print(str(turn)+"A: "+agentA.agentName() + ': ' + agentA.introduce()+"\n")
 print(str(turn)+"B: "+agentB.agentName() + ': ' + agentB.introduce()+"\n")
-remark = "Can I one day learn enough to make something as cool as the iPhone?"
+remark = "What is your favorite kind of sort?"
 for i in range(N_TURNS):
     turn += 1
     remark = agentA.respond(remark)

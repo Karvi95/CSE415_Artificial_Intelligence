@@ -21,14 +21,16 @@ def introduce():
 def respond(theInput):
   global cache
   global memCounter
-  toRemember = set(['map', 'maps', 'tree', 'trees', 'hash', 'hashes', 'set', 'sets', 'quicksort', 'greedy'])
+  toRemember = ['map', 'maps', 'tree', 'trees', 'hash', 'hashes', 'set', 'sets', 'quicksort', 'greedy', 'iPhone']
   if match('bye', theInput):
       return 'Hooroo!'
   wordlist = split(' ',remove_punctuation(theInput))
   # undo any initial capitalization:
-  wordlist[0]=wordlist[0].lower()
-  if ([i for i in wordlist if i in toRemember] and memCounter == 0):
-    cache = i
+  for i in range(len(wordlist) - 1):
+    wordlist[i] = wordlist[i].lower()
+  intersection = list(set(wordlist) & set(toRemember))    
+  if len(intersection) != 0:
+    cache = intersection[0]
   memCounter = memCounter + 1 
   return respondHelper(theInput, wordlist)
 
@@ -37,8 +39,8 @@ def respondHelper(the_input, wordlist):
   # return cache
   global cache
   global memCounter
-  if (memCounter == 3 and cache != ''): 
-    toReturn = "Before that mate, earlier, ya asked about " + cache  + "s, and ole Ieve's explanation might have been a bit bodgy. Ya reckon ya've grasped it?"
+  if (memCounter == 7 and cache != ''): 
+    toReturn = "Before that mate, earlier, ya asked about " + cache + ", and ole Ieve's explanation might have been a bit bodgy. Ya reckon ya've grasped it?"
     cache = ""
     memCounter = 0
     return toReturn
@@ -47,7 +49,7 @@ def respondHelper(the_input, wordlist):
           global emptyResCount
           emptyResCount += 1
           return puntCustom(emptyResCount, EMPTYRES)
-      if ('iPhone' in wordlist):
+      if ('iphone' in wordlist):
           global iPhoneCount
           iPhoneCount += 1
           return puntCustom(iPhoneCount, IPHONE)

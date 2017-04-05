@@ -1,46 +1,49 @@
-0A: Steve: I am Steve Jobs. I am busy turing a
+is-m440m27-01x:Desktop iguest$ python dialog.py
+0A: Steve: I am Steve Jobs. I am busy turning a
     profit in heaven, what do you want from me?
+    Bum Mook Oh made, so if you think I am buggy,
+    shoot an email to bmo5@uw.edu.
 
 0B: Ieve: Crikey Mate! Ma name's Ieve Sterwin; I was created by Arvindram Krishnamoorthy.
           You can contact him at karvi90@uw.edu but for now: 
           Which data structure or algorithm do ya wanna know about?
 
-1A: Steve: Can you one day learn enough to make something as cool as the iPhone.
+1A: Steve: Dude, I invented the friggin iPhone. Have you heard of it?
 
 1B: Ieve: I'm a simple bloke, I dunno about no iPhone.
 
-2A: Steve: Don't be so negative.
+2A: Steve: I love your negativity.
 
 2B: Ieve: Yeah, ain't that runtime a beaut?!
 
-3A: Steve: Dude, I invented the friggin iPhone. Have you heard of it?
+3A: Steve: I eat oreos for breakfest.
 
-3B: Ieve: Av a go then, ya mug!
+3B: Ieve: Bogosort's a bloody mess, I'll tell ya 'hwat.
 
-4A: Steve: I eat oreos for breakfest.
+4A: Steve: Ok Einstein, how you do a quicksort?
 
-4B: Ieve: Bogosort's a bloody mess, I'll tell ya 'hwat.
+4B: Ieve: Divide-and-conquer and she'll be apples mate. Those're the guidelines ta code 'er.
 
-5A: Steve: Ok Einstein, how you do a quicksort?
+5A: Steve: I started to code at the age of 13.
 
-5B: Ieve: Divide-and-conquer and she'll be apples mate.
+5B: Ieve: Codin's hard yakka, ya know -- but ya gotta start somewhere. Why don't we go over how ya'd implement a map?
 
 6A: Steve: Oh and there is one more thing...
 
 6B: Ieve: Gimme a fair go?.
 
-7A: Steve: Ha! Thats funny. I used to tell Steve Wozniac the samething.
+7A: Steve: Siri fetch me a glass of water
 
-7B: Ieve: I think your kangaroos loose in the top paddock.
+7B: Ieve: Before that mate, earlier, ya asked about quicksort, and ole Ieve's explanation might have been a bit bodgy. Ya reckon ya've grasped it?
 
-8A: Steve: You think my kangaroos loose in the top paddock.
+8A: Steve: Cool stuff, but can you tell me about map again?
 
-8B: Ieve: Remember: if ya don't optimize your algorithms, you're in for a dog's breakfast.
+8B: Ieve: If ya really wanna up yourself, graduate from maps to AVL trees.
 
-9A: Steve: Dude, I invented the friggin iPhone. Have you heard of it?
+9A: Steve: I heard my book came out, is it any good?
 
-9B: Ieve: Holey Doley, I'm gobsmacked. But let's get back ta trees, ya hear?
+9B: Ieve: I think your kangaroos loose in the top paddock.
 
-10A: Steve: I eat oreos for breakfest.
+10A: Steve: You think my kangaroos loose in the top paddock.
 
-10B: Ieve: Ace!
+10B: Ieve: Remember: if ya don't optimize your algorithms, you're in for a dog's breakfast.
