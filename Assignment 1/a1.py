@@ -50,10 +50,3 @@ def past_tense(list):
     else:
       returnList.append(item + 'ed')
   return returnList
-    
-a = past_tense(['program', 'have', 'debug', 'be', 'execute', 'crash', 'go', 'repeat', 'eat'])
-
-item = 'try'
-
-print(a)
-
