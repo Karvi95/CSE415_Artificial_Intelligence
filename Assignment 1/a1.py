@@ -23,14 +23,11 @@ def mystery_code(plaintext, n):
   return result.swapcase()
 
 # Number 3
-# Create a function called "chunks" with two arguments, l and n:
 def quintuples(l):
   return list(quintuplesHelper(l))
   
 def quintuplesHelper(l):
-    # For item i in a range that is a length of l,
     for i in range(0, len(l), 5):
-        # Create an index range for l of n items:
         yield l[i:i+5]
 
 #Number 4
