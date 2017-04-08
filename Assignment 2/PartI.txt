@@ -1,0 +1,25 @@
+'''PartII.py
+Arvindram Krishnamoorthy, CSE 415, Spring 2017, University of Washington
+Instructor:  S. Tanimoto.
+Assignment 2 Part II.  ISA Hierarchy Manipulation, adapted from the Linneus.py program
+
+Status of the implementation of new features:
+
+All forms of redundancy detection and processing are working.
+Extra credit (Cycle detection and processing) implemented and working.
+
+'''
+
+#3: 
+b) parrots ⊂ birds
+c) Polly ∈ parrot
+d) David Joines ∈ Jones
+e) "George Washington" ∈ a great name
+f) Artificial Intelligence ⊂ 'a state of mind'
+
+#4
+a) reflexive only
+b) transitive, antisymmetric
+c) reflexive, transitive, antisymmetric (so partial order)
+d) antisemmetric
+e) transitive, symmetric
