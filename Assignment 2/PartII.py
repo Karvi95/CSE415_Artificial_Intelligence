@@ -90,66 +90,50 @@ query_pattern = compile(r"^is\s+(a|an)\s+([-\w]+)\s+(a|an)\s+([-\w]+)(\?\.)*", I
 what_pattern = compile(r"^What\s+is\s+(a|an)\s+([-\w]+)(\?\.)*", IGNORECASE)    
 why_pattern = compile(r"^Why\s+is\s+(a|an)\s+([-\w]+)\s+(a|an)\s+([-\w]+)(\?\.)*", IGNORECASE)    
 
-def process(info) :
+def process(info):
     'Handles the user sentence, matching and responding.'
     result_match_object = assertion_pattern.match(info)
     if result_match_object != None :
         items = result_match_object.groups()
-        #Check stuff here for redudancy and already know
-        
+        print(info)
         if not MEMORY: 
             if items[3] not in get_isa_list(items[1]):
                 if items[1] != items[3]:
                     store_article(items[1], items[0])
                     store_article(items[3], items[2])
                     store_isa_fact(items[1], items[3])
+
+#                    print("ISA: ", ISA)
+ #                   print("INCLUDES: ", INCLUDES)
+  #                  print("FIND CHAIN: ", find_chain(items[1], items[3]))
+                    
+
+                    #if items[1]'s list has a string that item[3]'s list has, then indirect redundant
+
+                    indirectRedundancyCheck(items[1], items[3])
+
                     
                     #Make private function; should I do this recursively or check Union-Find (GO BACKWARDS FROM EATING TO FISH BASE CASE IS KEY ERROR OR IT EQUALS so use .keys()!!)?
 					
-
                     for attr in list(set(ISA[items[1]]) & set(ISA.keys())):
-                    	#print("FIRST WORD: ", items[1])
-	                	#print("FIRST LIST: ", ISA[items[1]])
-    	            	#print("ELEMENT IN LIST: ", attr)
-                        #print("ATTR: ", attr)
-                        #print("INTERSECTION: ", list(set(ISA[items[1]]) & set(ISA.keys())))
                         currentValues = ISA[attr]
                         while(items[3] not in currentValues):
-                        #	print("NEW LIST: ", ISA[attr])
                         	for value in ISA[attr]:
                         		currentValues = ISA[value]
-                        #		print(currentValues) 
 
-                        	#print("SECOND: ", items[3])
-                        	#print("ELEMENT IN LIST's LIST: ", ISA[attr])
                         print("You don't have to tell me that.")
-                        #print("ISA BEFORE REMOVE: ", ISA)
                         ISA[items[1]].remove(items[3])
-                        #print("ISA: ", ISA)
-                        #print("INCLUDES: ", INCLUDES)
-                        #print('')
                         return
 
                     print("I understand.")
-#                    print("ISA: ", ISA)
-#                    print("INCLUDES: ", INCLUDES)
-                    print('')
                     return
                 else:
                     print("You don't have to tell me that.")
-#                    print("ISA: ", ISA)
-#                    print("INCLUDES: ", INCLUDES)
-#                    print('')
                     return
             else:
                 print ("You told me that earlier.")
-#                print("ISA: ", ISA)
-#                print("INCLUDES: ", INCLUDES)
-#                print('')
                 return
 
-
-        
     result_match_object = query_pattern.match(info)
     if result_match_object != None :
         items = result_match_object.groups()
@@ -220,7 +204,7 @@ def report_link(link):
     y = link[1]
     a1 = get_article(x)
     a2 = get_article(y)
-    return a1 + " " + x + " is " + a2 + " " + y + ", "
+    return a1 + " " + x + " is " + a2 + " " + y
     
 def find_chain(x, z):
     'Returns a list of lists, which each sublist representing a link.'
@@ -233,15 +217,51 @@ def find_chain(x, z):
                 temp.insert(0, [x,y])
                 return temp
 
+def indirectRedundancyCheck(first, second):
+	#print("ISA: ", ISA)
+	#print("INCLUDES: ", INCLUDES)
+	if first in INCLUDES.keys():
+		#print("FIRST: ", first)
+		#print("FIRST's LIST: ", INCLUDES[first]) 
+		#print("SECOND: ", second)
+		for included in INCLUDES[first]:
+			if included in INCLUDES[second]:
+				chain = find_chain(included, second)
+#				print('FIND CHAIN: ', chain)
+				if len(chain) == 1:
+					print('Your earlier statement that ' + report_link(chain[0]) + ' is redundant.')
+				elif len(chain) >= 1:
+					print('The following statements you made earlier are now all redundant:')
+					for link in chain:
+						print(report_link, ';')
+		return					
+
+
+
 def test() :
-    process("A sockeye is a salmon.")
-    process("A salmon is a fish.")
-    process("A sockeye is a fish.")
-    process("A spade is a spade.")
-    process("A fish is a animal.")
-    process("A sockeye is a animal.")
-    #print("ISA: ", ISA)
-    #print("INCLUDES: ", INCLUDES)
+	indirectTest1()
+	#indirectTest2()
+    #directTest()
+
+def directTest():
+	process("A sockeye is a salmon.")
+	process("A salmon is a fish.")
+	process("A sockeye is a fish.")
+	process("A spade is a spade.")
+	process("A fish is a animal.")
+	process("A sockeye is a salmon.")
+	process("A sockeye is a animal.")
+
+def indirectTest1():
+    process("A hawk is a bird.")
+    process("A hawk is a raptor.")
+    process("A raptor is a bird.")	
+
+def indirectTest2():
+    process("A hawk is a raptor.")
+    process("A hawk is an animal.")
+    process("A bird is an animal.")
+    process("A raptor is a bird.")
 
 test()
 linneus()
