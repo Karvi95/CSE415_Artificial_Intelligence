@@ -250,49 +250,7 @@ def directRedundancyCheck(first, second):
         return toReturn
 
 def indirectRedundancyCheck(first, second):
-    output = list(indirectRedundancyCheckHelper(first, second))
-    listComparisonList = []
-    if output:
-        print("OUTPUT: " + str(output))
-        print("")
-        DESCENDENTS = [item for sublist in output for item in sublist]
-        # print("DESCENDENTS: " + str(DESCENDENTS))
-        # for descendent in DESCENDENTS:
-        #     print("THIS DESCENDENT: " + descendent)
-        #     unvisitedUniverseNew = [x for x in (INCLUDES[descendent])]
-        #     print("NEW UNIVERSE: " + str(unvisitedUniverseNew))
-        #     for relationNew in unvisitedUniverseNew:
-        #         print("NEW RELATION: " + str(relationNew))
-        #         comparison.add(relationNew)
-        #         print(comparison)
-        #         secondDegreesNew = INCLUDES[relationNew]
-        #         print("NEW SECOND DEGREES: " + str(secondDegreesNew))
-        #         for childNew in secondDegreesNew:
-        #             comparison.add(childNew)
-        #             try: 
-        #                 secondDegreesNew = INCLUDES[childNew]        
-        #             except KeyError:
-        #                 print("COMPARISON: " + str(pathNew))
-        #                 yield path
-
-
-
-
-def indirectRedundancyCheckHelper(first, second, path=None):
-    print("ISA: " + str(ISA))
-    print("INCLUDES: " + str(INCLUDES))
-    print("")
-
-
-    if path is None:
-        path = [first]
-
-    if first == second:
-        try:
-            yield path
-        except KeyError:
-            pass
-
+    toReturn = "Didn't Print"
     childrenOfFirst = dfs(INCLUDES, first)
     childrenOfFirst.remove(first)
     
@@ -303,89 +261,32 @@ def indirectRedundancyCheckHelper(first, second, path=None):
         parents.remove(child)
         parentsDict[child] = parents
 
-    print("PARENTS DICTIONARY: " + str(parentsDict))
+    chains = []
 
     if second in ISA.keys():
         secondsParents = ISA[second]
         for key in parentsDict.keys():
             values = parentsDict[key]
-            print(values)
             inCommon = list(set(secondsParents).intersection(values))
-            for common in inCommon:
-                chain = find_chain(child, common)
-                print('chain ' + str(chain))
-                if len(chain) == 1:
-                    get_isa_list(chain[0][0]).remove(common)
-                    get_includes_list(common).remove(child)
-                    print('Your earlier statement that ' + report_link(chain[0]) + ' is redundant.')
-                    print("ISA: " + str(ISA))
-                    print("INCLUDES: " + str(INCLUDES))
-                # elif len(chain) >= 1:
-                #     print('The following statements you made earlier are now all redundant:')
-                #     for link in chain:
-                #         print(report_link + ';')
-
-def isAncestor():
-    print("HI")
-
-def dfs(graph, child, visited = None):
-    if visited == None:
-        visited = []
-    if child in visited:
-        return
-
-    visited.append(child)
-
-    try: 
-        for each in [x for x in graph[child] if x not in visited]:
-            dfs(graph, each, visited)
-    except KeyError:
-        pass
-
-    return visited
-
-    # for finalizedChild in childrenOfFirst:
-    #     parents = ISA[finalizedChild]
-    #     print("PARENTS: " + str(parents))
-    #     for parent in parents:
-    #         parentsOfChildren.append(parent)
-    #         if parent in ISA.keys():
-    #             while parent in ISA.keys():
-    #                 parents = ISA[parent]
-    #                 break
-    # print("PARENTS OF CHILDREN: " + str(parentsOfChildren))
-
-
-
-    # unvisitedUniverse = [x for x in list(set(INCLUDES[first]) & set(INCLUDES.keys())) if x not in path]
-    # #print("UNVISITED UNIVERSE: " + str(unvisitedUniverse))
-    # for relation in unvisitedUniverse:
-    #     #print(relation)
-    #     path.append(relation)
-    #     secondDegrees = INCLUDES[relation]
-    #     #print("SECOND DEGREES: " + str(secondDegrees))
-    #     for child in secondDegrees:
-    #         path.append(child)
-    #         try: 
-    #             secondDegrees = INCLUDES[child]        
-    #         except KeyError:
-    #             #print("PATH: " + str(path))
-    #             path.remove(first)
-    #             yield path
-    #     # for eachPath in indirectRedundancyCheckHelper(relation, second, path.append(relation)):
-        #     yield eachPath
-            
-    #print('IN')
-    #stack = [(start, [start])]
-    #print(stack)
-    # while stack:
-    #     (vertex, path) = stack.pop()
-    #     for next in graph[vertex] - set(path):
-    #         if next == goal:
-    #             yield path + [next]
-    #         else:
-    #             stack.append((next, path + [next]))
-    # return
+            if len(inCommon) == 1:
+                chain = find_chain(key, inCommon[0])
+                get_isa_list(key).remove(inCommon[0])
+                get_includes_list(inCommon[0]).remove(key)
+                print('Your earlier statement that ' + report_link(chain[0]) + ' is now redundant.')
+                toReturn = "Printed."
+                return toReturn
+            elif len(inCommon) >1:
+                for common in inCommon:
+                    chains.append(find_chain(key, common))
+                    get_isa_list(key).remove(common)
+                    get_includes_list(common).remove(key)
+                    # for link in chain:
+                    #     print(report_link(link) + ';')
+        print('The following statements you made earlier are now all redundant:')
+        toReturn = "Printed."
+        for chain in chains:
+            print(report_link(chain[0]) + ';')
+        return toReturn
 
 
     # print("ISA: " + str(ISA))
@@ -409,13 +310,28 @@ def dfs(graph, child, visited = None):
     #                 print('The following statements you made earlier are now all redundant:')
     #                 for link in chain:
     #                     print(report_link + ';')
-    #     return		
+    #     return
 
+def dfs(graph, child, visited = None):
+    if visited == None:
+        visited = []
+    if child in visited:
+        return
 
+    visited.append(child)
+
+    try: 
+        for each in [x for x in graph[child] if x not in visited]:
+            dfs(graph, each, visited)
+    except KeyError:
+        pass
+
+    return visited
 
 def test() :
-	#indirectTest1()
-	indirectTest2()
+	indirectTest1()
+	#indirectTest2()
+    #indirectTest3()
     #directTest()
 
 def directTest():
@@ -437,6 +353,17 @@ def indirectTest2():
     process("A hawk is an animal.")
     process("A bird is an animal.")
     process("A raptor is a bird.")
+
+def indirectTest3():
+    process("A chinook is an organism.")
+    process("A sockeye is a salmon.")
+    process("A fish is an animal.")
+    process("A sockeye is an organism.")
+    process("A chinook is an animal.")
+    process("A chinook is a salmon.")
+    process("A sockeye is an animal.")
+    process("A fish is an organism.")
+    process("A salmon is a fish.")
 
 test()
 linneus()
