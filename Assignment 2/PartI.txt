@@ -18,7 +18,7 @@ e) "George Washington" ∈ a great name
 f) Artificial Intelligence ⊂ 'a state of mind'
 
 #4
-a) reflexive only
+a) reflexive, symmeteric, antisymmetric
 b) transitive, antisymmetric
 c) reflexive, transitive, antisymmetric (so partial order)
 d) antisemmetric
