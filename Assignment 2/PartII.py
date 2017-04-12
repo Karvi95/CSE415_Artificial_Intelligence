@@ -6,7 +6,6 @@ Assignment 2 Part II.  ISA Hierarchy Manipulation, adapted from the Linneus.py p
 Status of the implementation of new features:
 
 All forms of redundancy detection and processing are working.
-Extra credit (Cycle detection and processing) implemented and working.
 
 '''
 
@@ -283,9 +282,9 @@ def dfs(graph, child, visited = None):
 
     return visited
 
-def test() :
-	indirectTest1()
-	indirectTest2()
+def test():
+    indirectTest1()
+    indirectTest2()
     indirectTest3()
     directTest()
 
@@ -321,4 +320,5 @@ def indirectTest3():
     process("A salmon is a fish.")
 
 #test()
+
 linneus()
