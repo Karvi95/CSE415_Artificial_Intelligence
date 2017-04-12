@@ -13,7 +13,7 @@ Extra credit (Cycle detection and processing) implemented and working.
 #3: 
 b) parrots ⊂ birds
 c) Polly ∈ parrot
-d) i. David Jones ∈ Jones 
+d) David Jones ∈ Jones 
 e) "George Washington" ∈ a great name
 f) i.  Artificial Intelligence ∈ 'a state of mind' IF A.I. is an instance of all states of mind
    ii. Artificial Intelligence ⊂ 'a state of mind' IF A.I. is a subclass of all states of mind
