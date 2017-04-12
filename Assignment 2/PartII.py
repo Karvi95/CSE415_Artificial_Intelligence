@@ -284,10 +284,10 @@ def dfs(graph, child, visited = None):
     return visited
 
 def test() :
-	#indirectTest1()
-	#indirectTest2()
-    #indirectTest3()
-    #directTest()
+	indirectTest1()
+	indirectTest2()
+    indirectTest3()
+    directTest()
 
 def directTest():
 	process("A sockeye is a salmon.")
@@ -320,6 +320,5 @@ def indirectTest3():
     process("A fish is an organism.")
     process("A salmon is a fish.")
 
-test()
-print('')
+#test()
 linneus()
