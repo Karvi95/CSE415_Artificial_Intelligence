@@ -4,19 +4,19 @@ Instructor:  S. Tanimoto.'''
 
 PuzzleName 		Solved? 	States # 		Heuristic
 ---------------------------------------------------------------------------------
-p10a			Yes.		80				hamming
-p10a			Yes.		56				euclidean
-p10a			Yes.		57				manhattan
-p10a			Yes.		59				custom
-p12a			Yes.		252				hamming
-p12a			Yes.		168				euclidean
-p12a			Yes.		148				manhattan
-p12a			Yes.		169				custom
-p14a			Yes.		658				hamming
-p14a			Yes.		356				euclidean
-p14a			Yes.		355				manhattan
-p14a			Yes.		393				custom
-p16a			Yes.		986				hamming
-p16a			Yes.		535				euclidean
-p16a			Yes.		444				manhattan
-p16a			Yes.		556				custom
+p10a			Yes.		80			hamming
+p10a			Yes.		56			euclidean
+p10a			Yes.		57			manhattan
+p10a			Yes.		59			custom
+p12a			Yes.		252			hamming
+p12a			Yes.		168			euclidean
+p12a			Yes.		148			manhattan
+p12a			Yes.		169			custom
+p14a			Yes.		658			hamming
+p14a			Yes.		356			euclidean
+p14a			Yes.		355			manhattan
+p14a			Yes.		393			custom
+p16a			Yes.		986			hamming
+p16a			Yes.		535			euclidean
+p16a			Yes.		444			manhattan
+p16a			Yes.		556			custom
