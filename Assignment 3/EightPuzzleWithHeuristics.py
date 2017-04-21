@@ -1,4 +1,4 @@
-'''PartIII-4.py
+'''PartII-4.py
 Arvindram Krishnamoorthy (karvi90), CSE 415, Spring 2017, University of Washington
 A QUIET Solving Tool problem formulation.
 QUIET = Quetzal User Intelligence Enhancing Technology.

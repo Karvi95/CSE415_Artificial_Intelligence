@@ -1,4 +1,4 @@
-'''PartIII-2.py
+'''PartII-2.py
 Arvindram Krishnamoorthy (karvi90), CSE 415, Spring 2017, University of Washington
 Instructor:  S. Tanimoto.BasicEightPuzzle.py
 A QUIET Solving Tool problem formulation.

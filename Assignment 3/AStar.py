@@ -1,4 +1,4 @@
-'''PartIII-3.py
+'''PartII-3.py
 Arvindram Krishnamoorthy (karvi90), CSE 415, Spring 2017, University of Washington
 Instructor:  S. Tanimoto.
 # Astar.py, April 2017 
