@@ -1,0 +1,12 @@
+1.
+(9C3) * ((9-3)C(5-3)) which simiplifies to (9C3) * (6C2) which is 1260. This is because there are 9 empty spaces and we need to count all the ways to place any three elements when the first player goes and then there are 6 empty spaces remaining and we need to count all the ways to place any two elements when the second player goes. Then you multiply all of those to account for all the different combinations of those two events.
+
+2.
+(27C2) * ((27-2)C2) * (((27-2) - 2)C2) which simplifies to (27C2) * (25C2) * (23C2) which is 26640900. This is adapting the same logic in higher dimensions and more players (27 comes from 3 * 3 * 3).
+
+3.
+2^(n^2) - 2^ceiling((n^2)/4) - 2^(ceiling ((n^2)/2)+1) .
+
+This is because this problem can be viewed as a matrix with binary values representing fill. Then, in a nxn matrix there are n^2 entries and with
+two possible choices, we have a total of 2^(n^2) potential choices. Next we remove duplicates of 4-symmetry (only 1/4th of the 
+blocks need to be determined; a 1/4th wedge cut of the square) and 2-symmetry (same concept).
