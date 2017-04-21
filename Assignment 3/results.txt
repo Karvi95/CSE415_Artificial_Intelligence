@@ -3,7 +3,7 @@ Arvindram Krishnamoorthy, CSE 415, Spring 2017, University of Washington
 Instructor:  S. Tanimoto.'''
 
 PuzzleName 		Solved? 	States # 		Heuristic
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 p10a			Yes.		80				hamming
 p10a			Yes.		56				euclidean
 p10a			Yes.		57				manhattan
