@@ -1,3 +1,6 @@
+'''PartIII-3.py
+Arvindram Krishnamoorthy (karvi90), CSE 415, Spring 2017, University of Washington
+Instructor:  S. Tanimoto.
 # Astar.py, April 2017 
 # Based on ItrDFS.py, Ver 0.3, April 11, 2017.
 
@@ -7,10 +10,11 @@
 # See the TowerOfHanoi.py example file for details.
 # Examples of Usage:
 
-# python3 AStar.py EightPuzzleWithHeuristics h_manhattan
+# python3 AStar.py EightPuzzleWithHeuristics h_manhattan'''
 
 import sys
 from Queue import PriorityQueue
+from itertools import count
 
 # DO NOT CHANGE THIS SECTION 
 if sys.argv==[''] or len(sys.argv)<2:
@@ -49,28 +53,22 @@ def AStar(initial_state):
     # add any auxiliary data structures as needed
     OPEN = PriorityQueue()
     CLOSED = []
+    counter = count()
+    OPEN.put((0, next(counter), initial_state))
     BACKLINKS[initial_state] = -1
-    stateTuple = (0, initial_state) 
-    OPEN.put(stateTuple)
-
-    stateToCostDict = {}
-
+    
+    
     while not OPEN.empty():
+        COUNT += 1
         S = OPEN.get()
-        #print("S is: " + str(type(S)))
-        costValue = int(S[0])
-        #print("costValue: " + str(type(costValue)))
-        S = S[1]
-        #print("NOW, S is: " + str(type(S)))
-        stateToCostDict[S] = costValue
-        #print("COST IN DICTIONARY: " + str(stateToCostDict[S]))
+        p = S[0]
+        S = S[2]
         while S in CLOSED:
             S = OPEN.get()
-            #print("Closed S is: " + str(type(S)))
-            S = S[1]    
+            p = S[0]
+            S = S[2]
         CLOSED.append(S)
         
-
         # DO NOT CHANGE THIS SECTION: begining 
         if Problem.GOAL_TEST(S):
             print(Problem.GOAL_MESSAGE_FUNCTION(S))
@@ -78,32 +76,16 @@ def AStar(initial_state):
             return path, Problem.PROBLEM_NAME
         # DO NOT CHANGE THIS SECTION: end
 
-
         # TODO: finish A* implementation
-        COUNT += 1
-        # if (COUNT % 32)==0:
-        #     print(".")
-        # if (COUNT % 128)==0:
-        #     print("COUNT = "+str(COUNT))
-        #     print("len(OPEN)="+str(len(OPEN)))
-        #     print("len(CLOSED)="+str(len(CLOSED)))
-
         for op in Problem.OPERATORS:
-            #Optionally uncomment the following when debugging
-            #a new problem formulation.
-            #print("Trying operator: " + op.name)
-            #print("Current S: " + str(S))
+            # Optionally uncomment the following when debugging
+            # a new problem formulation.
+            # print("Trying operator: "+op.name)
             if op.precond(S):
-                #print("SATISFIED")
                 new_state = op.state_transf(S)
-                #print("NEW STATE: " + str(new_state))
                 if not new_state in CLOSED:
-                    newHeuristic = costValue + heuristics(new_state)
-                    if not new_state in stateToCostDict or stateToCostDict[new_state] >  newHeuristic:
-                        stateTuple = (newHeuristic, new_state)
-                        stateToCostDict[new_state] = newHeuristic
-                        OPEN.put(stateTuple)
-                        BACKLINKS[new_state] = S
+                    BACKLINKS[new_state] = S
+                    OPEN.put((p + heuristics(new_state), next(counter), new_state))
 
 # DO NOT CHANGE
 def backtrace(S):

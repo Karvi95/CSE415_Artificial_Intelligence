@@ -1,14 +1,18 @@
-'''BasicEightPuzzle.py
+'''PartIII-4.py
+Arvindram Krishnamoorthy (karvi90), CSE 415, Spring 2017, University of Washington
 A QUIET Solving Tool problem formulation.
 QUIET = Quetzal User Intelligence Enhancing Technology.
 The XML-like tags used here serve to identify key sections of this 
 problem formulation.  
+
+This is the updated version with Heuristics.
 
 CAPITALIZED constructs are generally present in any problem
 formulation and therefore need to be spelled exactly the way they are.
 Other globals begin with a capital letter but otherwise are lower
 case or camel case.
 '''
+
 #<IMPORTS>
 import math
 #</IMPORTS>
@@ -177,7 +181,7 @@ p12 = [3, 1, 2, 6, 8, 7, 5, 4, 0]
 p14 = [4, 5, 0, 1, 2, 8, 3, 7, 6]
 p16 = [0, 8, 2, 1, 7, 4, 3, 6, 5]
 
-INITIAL_STATE = State(p4)
+INITIAL_STATE = State(p16)
 CREATE_INITIAL_STATE = lambda: INITIAL_STATE
 #</INITIAL_STATE>
 

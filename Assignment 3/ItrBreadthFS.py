@@ -1,3 +1,6 @@
+'''PartIII-1.py
+Arvindram Krishnamoorthy (karvi90), CSE 415, Spring 2017, University of Washington
+Instructor:  S. Tanimoto.
 # ItrBreadthFS.py, Mar 2017 
 # Based on ItrDFS.py, Ver 0.3, April, 2017.
 # Iterative Breadth-First Search of a problem space.
@@ -6,7 +9,7 @@
 # See the TowersOfHanoi.py example file for details.
 # Examples of Usage:
 # python3 ItrBFS.py TowersOfHanoi
-# python3 ItrBFS.py EightPuzzle
+# python3 ItrBFS.py EightPuzzle'''
 
 import sys
 

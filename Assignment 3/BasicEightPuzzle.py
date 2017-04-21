@@ -1,4 +1,6 @@
-'''BasicEightPuzzle.py
+'''PartIII-2.py
+Arvindram Krishnamoorthy (karvi90), CSE 415, Spring 2017, University of Washington
+Instructor:  S. Tanimoto.BasicEightPuzzle.py
 A QUIET Solving Tool problem formulation.
 QUIET = Quetzal User Intelligence Enhancing Technology.
 The XML-like tags used here serve to identify key sections of this 

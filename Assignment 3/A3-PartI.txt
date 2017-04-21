@@ -1,3 +1,4 @@
+Arvindram Krishnamoorthy
 1.
 (9C3) * ((9-3)C(5-3)) which simiplifies to (9C3) * (6C2) which is 1260. This is because there are 9 empty spaces and we need to count all the ways to place any three elements when the first player goes and then there are 6 empty spaces remaining and we need to count all the ways to place any two elements when the second player goes. Then you multiply all of those to account for all the different combinations of those two events.
 
