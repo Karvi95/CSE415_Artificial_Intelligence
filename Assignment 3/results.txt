@@ -2,21 +2,21 @@
 Arvindram Krishnamoorthy, CSE 415, Spring 2017, University of Washington
 Instructor:  S. Tanimoto.'''
 
-PuzzleName 		Solved? 	States # 		Heuristic
-------------------------------------------------------
-p10a			Yes.		80				hamming
-p10a			Yes.		56				euclidean
-p10a			Yes.		57				manhattan
-p10a			Yes.		59				custom
-p12a			Yes.		252				hamming
-p12a			Yes.		168				euclidean
-p12a			Yes.		148				manhattan
-p12a			Yes.		169				custom
-p14a			Yes.		658				hamming
-p14a			Yes.		356				euclidean
-p14a			Yes.		355				manhattan
-p14a			Yes.		393				custom
-p16a			Yes.		986				hamming
-p16a			Yes.		535				euclidean
-p16a			Yes.		444				manhattan
-p16a			Yes.		556				custom
+PuzzleName 		Solved? 	States # 		Heuristic 		PathLength
+-----------------------------------------------------------------------
+p10a			Yes.		76	 			hamming 		10
+p10a			Yes.		55	 			euclidean 		10
+p10a			Yes.		56	 			manhattan		10
+p10a			Yes.		58	 			custom 			10
+p12a			Yes.		251				hamming 		12
+p12a			Yes.		167				euclidean 	    12
+p12a			Yes.		142				manhattan		12
+p12a			Yes.		168				custom	 		12
+p14a			Yes.		645				hamming			14
+p14a			Yes.		355				euclidean		14
+p14a			Yes.		338				manhattan		14
+p14a			Yes.		392				custom			14
+p16a			Yes.		985				hamming			16
+p16a			Yes.		534				euclidean		16
+p16a			Yes.		442				manhattan		16
+p16a			Yes.		555				custom			16

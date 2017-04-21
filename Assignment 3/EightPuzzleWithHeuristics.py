@@ -13,10 +13,6 @@ Other globals begin with a capital letter but otherwise are lower
 case or camel case.
 '''
 
-#<IMPORTS>
-import math
-#</IMPORTS>
-
 #<METADATA>
 QUIET_VERSION = "0.2"
 PROBLEM_NAME = "Basic Eight Puzzle"
@@ -80,7 +76,7 @@ def h_euclidean(s):
     for i in s.d:
       currIndex = s.d.index(i)
       gIndex = goalList.index(i)
-      euclideanDist += math.sqrt((((currIndex / 3) - (gIndex / 3)) ** 2) + (((currIndex % 3) - (gIndex % 3)) ** 2))
+      euclideanDist += ((((currIndex / 3) - (gIndex / 3)) ** 2) + (((currIndex % 3) - (gIndex % 3)) ** 2)) ** (0.5)
     return euclideanDist
   
 def h_hamming(s): 
